@@ -1,0 +1,63 @@
+
+
+<head>
+    <title>Reservation Form</title>
+    <style>
+        body-reg {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            height: 100vh;
+            width: 100vh;
+        }
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 60vh;
+            font-size: 2vh;
+            margin: 0vh 0vh 0vh 70vh;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 0vh 0vh 1vh 0vh;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 1vh;
+            margin: 0vh 0vh 1vh 0vh;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin: 0vh 0vh 0vh 20vh;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-reg">
+    <h2>Reservation Form</h2>
+    <form method="post" action="{% url 'reservation_form' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+</body>

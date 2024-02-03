@@ -1,0 +1,30 @@
+{% load static %}
+{% include "pages/navbar.html" %}
+<link rel="stylesheet" href="{% static 'css/respage.css' %}">
+
+<h2>Contact List</h2>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <tr>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>SUBJECT</th>
+            {% comment %} <th>MESSAGE</th> {% endcomment %}
+            <th>ACTIONS</th>  
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.subject }}</td>
+            {% comment %} <td>{{ contact.message }}</td> {% endcomment %}
+            <td>
+                <a href="{% url 'contact_detail' pk=contact.pk %}">View</a> |
+
+                <a href="{% url 'contact_delete' pk=contact.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

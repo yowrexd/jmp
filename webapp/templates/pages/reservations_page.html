@@ -1,0 +1,43 @@
+{% load static %}
+{% include "pages/navbar.html" %}
+<link rel="stylesheet" href="{% static 'css/respage.css' %}">
+
+<h2>Reservation Tables</h2>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <tr>
+            <th>NAME</th>
+            <th>ROOM</th>
+            <th>PHONE</th>
+            <th>E-MAIL</th>
+            <th>ADDRESS</th>
+            <th>CITY</th>
+            <th>COUNTRY</th>
+            <th>POSTAL CODE</th>
+            <th>CHECK IN</th>
+            <th>CHECK OUT</th>
+            <th>ACTIONS</th>  
+        </tr>
+        {% for abc in reservations %}
+        <tr>
+            <td>{{ abc.name }}</td>
+            <td>{{ abc.room }}</td>
+            <td>{{ abc.phone }}</td>
+            <td>{{ abc.email }}</td>
+            <td>{{ abc.address }}</td>
+            <td>{{ abc.city }}</td>
+            <td>{{ abc.country }}</td>
+            <td>{{ abc.postal_code }}</td>
+            <td>{{ abc.check_in_date }}</td>
+            <td>{{ abc.check_out_date }}</td>
+
+            <td>
+                <a href="{% url 'reservation_detail' pk=abc.pk %}">View</a> |
+                <a href="{% url 'reservation_edit' pk=abc.pk %}">Edit</a> |
+                <a href="{% url 'reservation_delete' pk=abc.pk %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>

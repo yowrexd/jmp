@@ -1,0 +1,68 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/respage.css' %}">
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        color: #333;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    div {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    p {
+        margin: 10px 0;
+    }
+
+    strong {
+        color: #333;
+    }
+
+    a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+        background-color: #2980b9;
+    }
+</style>
+
+<h2>Reservation Details</h2>
+
+<div class="">
+    <p><strong>Name:</strong> {{ reservation.name }}</p>
+    <p><strong>Room:</strong> {{ reservation.room }}</p>
+    <p><strong>Phone:</strong> {{ reservation.phone }}</p>
+    <p><strong>Email:</strong> {{ reservation.email }}</p>
+    <p><strong>Address:</strong> {{ reservation.address }}</p>
+    <p><strong>City:</strong> {{ reservation.city }}</p>
+    <p><strong>Country:</strong> {{ reservation.country }}</p>
+    <p><strong>Postal Code:</strong> {{ reservation.postal_code }}</p>
+    <p><strong>Check In Date:</strong> {{ reservation.check_in_date }}</p>
+    <p><strong>Check Out Date:</strong> {{ reservation.check_out_date }}</p>
+    <p><strong>Comments:</strong> {{ reservation.comments }}</p>
+</div>
+
+<a href="{% url 'reservations_page' %}">Back to Contact List</a>

@@ -1,0 +1,57 @@
+{% load static %}
+
+{% include "pages/navbar.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Showcase - Acret</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/room.css' %}">
+</head>
+<body>
+    <section id="acret">
+    <div class="room-showcase section" id="section1">
+        <div class="overlay"></div>
+        <h1 style="color: black;">Acret</h1>
+        <img class="fixed-image" src="{% static 'images/acret-2p.jpg' %}" alt="Acret Room Showcase">
+    </div>
+    
+    <div class="room-showcase section" id="section2">
+        <div class="overlay"></div>
+        <p>Cozy Room for 2 People</p><br><br>
+        <h2>Room Features:</h2>
+            <li>Queen-sized bed with luxurious linens</li>
+            <li>Private bathroom with modern amenities</li>
+            <li>Comfortable seating area with a view</li>
+            <li>Complimentary Wi-Fi</li>
+    </div>
+    </section>
+
+    <section id="tyrone">
+        <div class="room-showcase section" id="section1">
+            <h1 style="color: black;">Tyrone</h1>
+        </div>
+        
+        <div class="room-showcase section" id="section">
+            <div class="overlay"></div>
+            <p>Cozy Room for 4 People</p><br><br>
+            <h2>Room Features:</h2>
+                <li>Two Queen-sized bed with luxurious linens</li>
+                <li>Private bathroom with modern amenities</li>
+                <li>Comfortable seating area with a view</li>
+                <li>Complimentary Wi-Fi</li>
+        </div>
+        
+        <div class="room-showcase section" id="section4" style="color: black;">
+            <h2>Book Your Stay</h2>
+            <p>Ready to experience the comfort of Velcit Hotel? Reserve now and enjoy a relaxing time!</p>
+        </div>
+        </section>
+    
+{% include "pages/footer.html" %}
+
+</body>
+</html>

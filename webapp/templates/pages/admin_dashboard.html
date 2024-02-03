@@ -1,0 +1,24 @@
+{% load static %}
+{% include "pages/navbar.html" %}
+<head>
+<style>
+    div#list {
+        text-align: center;
+        margin-top: 5vh;
+    }
+    div#list a {
+        margin: 2vh 5vh;
+    }
+</style>
+</head>
+<div id="list">
+<h2>Admin Dashboard</h2>
+<!-- Add a button to redirect to respage -->
+<a href="{% url 'reservations_page' %}" class="btn btn-primary">Go to Reservation list</a>
+<a href="{% url 'contact_list' %}" class="btn btn-primary">Go to Contact Us list</a>
+</div>
+
+<!-- Display reservations or any other admin-related content here -->
+<div class="table-wrapper">
+    <!-- Your reservation table code goes here -->
+</div>

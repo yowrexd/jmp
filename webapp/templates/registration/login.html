@@ -1,0 +1,58 @@
+
+{% load static %}
+{% include "pages/navbar.html" %}
+<head>
+  <style>
+    div#login {
+      text-align: center;
+      margin: 100px;
+    }
+    form input, button {
+      margin: 10px;
+    }
+    form button {
+      padding: 5px 10px;
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white;
+      padding: 5px 20px;
+      border-radius: 20px;
+      border: none;
+    }
+    form button:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+    form input {
+      background-color:transparent;
+      padding: 2px 15px;
+      border-color: transparent;
+      border-radius: 2px;
+      border-bottom-color: rgba(0, 0, 0, 0.5);
+    }
+    form input::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+    }
+    form input:focus-visible {
+      border: none;
+      text-decoration: none;
+    }
+    form input::after {
+      border: none;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<div id="login">
+<h2>Login</h2><br>
+<form method="post" action="{% url 'login_view' %}">
+  {% csrf_token %}
+  <input type="text" name="username" required placeholder="Username">
+  <br>
+  <input type="password" name="password" required placeholder="Password">
+  <br>
+  <button type="submit">Login</button>
+</form>
+</div>
+{% include "pages/footer.html" %}
+

@@ -1,0 +1,15 @@
+
+{% load static %}
+{% include "pages/navbar.html" %}
+
+<h2>Login</h2>
+<form method="post" action="{% url 'login_view' %}" style="margin-left: 50px;">
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input type="text" name="username" required>
+  <br>
+  <label for="password">Password:</label>
+  <input type="password" name="password" required>
+  <br>
+  <button type="submit">Login</button>
+</form>
